@@ -7,10 +7,17 @@ upgrade-dep: ## Upgrade dependencies
 	@go get -u -t -v ./...
 
 .PHONY: build
-build: dep ## Build the binary file
+build: build-handler build-server ## Build both binaries
+
+.PHONY: build-handler
+build-handler: dep ## Build the alexa handler
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o handler ./cmd/handler
 	rm -f handler.zip
 	zip handler.zip  ./handler
+
+.PHONY: build-server
+build-server: dep ## Build the lgtv control server
+	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o server ./cmd/server
 
 .PHONY: help
 help: ## Display this help
