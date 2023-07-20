@@ -3,6 +3,8 @@ module github.com/danielpieper/alexa
 go 1.19
 
 require (
+	github.com/arienmalec/alexa-go v0.0.0-20181025212142-975687393e90
+	github.com/aws/aws-lambda-go v1.41.0
 	github.com/caarlos0/env/v9 v9.0.0
 	github.com/danielpieper/lgtv-go v0.1.0
 	github.com/joho/godotenv v1.5.1

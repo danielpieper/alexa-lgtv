@@ -1,4 +1,4 @@
-handler
-handler.zip
-server
-.env
+/handler
+/server
+/handler.zip
+/.env
